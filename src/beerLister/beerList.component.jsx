@@ -37,6 +37,7 @@ var BeerList = React.createClass({
 
     var list = this.state.beers.map(function (beer, n) {
       return (
+        // TODO This have to be rendered somewhere else !
         <li key={n} className="list-group-item row">
           <h3 className="list-group-item-heading">{beer.name}</h3>
           <div className="list-group-item-text">

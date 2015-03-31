@@ -1,9 +1,10 @@
 'use strict';
+var rewire = require('rewire');
 var superagent = require('superagent');
 var React = require('react/addons');
 var TestUtils = React.addons.TestUtils;
 
-var BeerList = require('../beerList.component.jsx');
+var BeerList;
 
 var beersMock = {
   beers: [
@@ -15,19 +16,23 @@ var beersMock = {
 describe('beerList.component', function () {
   var instance;
 
-  var mockSuperagent = function (err, data) {
+  beforeEach(function () {
+
     spyOn(superagent, 'get').and.callFake(function () {
       return {end: jasmine.createSpy('end').and.callFake(function (callback) {
-        callback(err, data);
+        callback(null, {text: JSON.stringify(beersMock)});
       })};
     });
-  };
 
-  beforeEach(function (done) {
-    mockSuperagent(null, { text: JSON.stringify(beersMock)})
+    BeerList = rewire('../beerList.component.jsx');
+
+    BeerList.__set__('BeerItem', React.createClass({
+      render: function () {
+        return <li>{this.props.children}</li>;
+      }
+    }));
+
     instance = TestUtils.renderIntoDocument(<BeerList />);
-
-    setTimeout(done, 100);
   });
 
   it('should render beerList component', function () {
@@ -36,9 +41,6 @@ describe('beerList.component', function () {
   });
 
   it('should render 2 beers', function () {
-    instance = TestUtils.renderIntoDocument(<BeerList />);
-
-    expect(instance).toBeDefined();
     var lis = TestUtils.scryRenderedDOMComponentsWithTag(instance, 'li');
     expect(lis).toBeDefined();
     expect(lis.length).toBe(2);
