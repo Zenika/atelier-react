@@ -1,8 +1,7 @@
 'use strict';
 
 var React = require('react');
+var List = require('./beerLister/beerList.component.jsx');
 
-// TODO require and render the right component ;)
-var Hello = require('./helloworld/helloworld.component.jsx');
-
-React.render(<Hello />, document.getElementById('view'));
+// TODO Render the root element into the view
+React.render(<List />, document.getElementById('view'));
