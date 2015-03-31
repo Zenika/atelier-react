@@ -3,6 +3,8 @@
 var React = require('react');
 var superagent = require('superagent');
 
+var BeerItem = require('./beerItem.component.jsx');
+
 // Function that list beers for you ;)
 var listBeers = function (callback) {
   var url = 'http://api.openbeerdatabase.com/v1/beers.json';
@@ -36,20 +38,12 @@ var BeerList = React.createClass({
   render: function () {
 
     var list = this.state.beers.map(function (beer, n) {
-      return (
-        <li key={n} className="list-group-item row">
-          <h3 className="list-group-item-heading">{beer.name}</h3>
-          <div className="list-group-item-text">
-            <p className="badge col-md-1">{beer.abv}%</p>
-            <p className="col-md-11">{beer.description}</p>
-          </div>
-        </li>
-      );
+      return <BeerItem key={n} beer={beer}/>;
     });
 
     return (
       <ul className="list-group">
-      {list}
+        {list}
       </ul>
     );
   }
