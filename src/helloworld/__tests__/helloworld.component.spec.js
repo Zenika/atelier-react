@@ -8,19 +8,19 @@ var componentFile = '../helloworld.component';
 jest.dontMock(componentFile);
 
 describe('helloworld.component', function () {
-    var HelloWorld;
-    var TestUtils = React.addons.TestUtils;
+  var HelloWorld;
+  var TestUtils = React.addons.TestUtils;
 
-    var instance;
+  var instance;
 
-    beforeEach(function () {
-        HelloWorld = require(componentFile);
+  beforeEach(function () {
+    HelloWorld = require(componentFile);
 
-        instance = TestUtils.renderIntoDocument(<HelloWorld />);
-    });
+    instance = TestUtils.renderIntoDocument(<HelloWorld />);
+  });
 
-    it('should render helloworld component', function () {
-        expect(instance).toBeDefined();
-        expect(TestUtils.findRenderedDOMComponentWithTag(instance, 'div')).toBeDefined();
-    });
+  it('should render helloworld component', function () {
+    expect(instance).toBeDefined();
+    expect(TestUtils.findRenderedDOMComponentWithTag(instance, 'div')).toBeDefined();
+  });
 });
