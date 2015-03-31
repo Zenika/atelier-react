@@ -8,6 +8,8 @@ var superagent = require('superagent');
 jest.dontMock('../beerList.component.jsx');
 var BeerList = require('../beerList.component.jsx');
 
+var BeerItem = require('../beerItem.component.jsx');
+
 var beersMock = {
   beers: [
     {name: 'beer 1', description: 'desc beer 1', abv: 6.4},
@@ -22,6 +24,8 @@ describe('beerList.component', function () {
     superagent.end.mockImpl(function (callback) {
       callback(null, {text: JSON.stringify(beersMock)});
     });
+
+    TestUtils.mockComponent(BeerItem, 'li');
   });
 
   it('should render beerList component', function () {
