@@ -4,7 +4,7 @@ var superagent = require('superagent');
 
 module.exports = {
   getBeer: function (callback) {
-    var url = 'http://api.openbeerdatabase.com/v1/beers.json',
+    var url = 'v1/beers.json',
       params = {};
 
     superagent
