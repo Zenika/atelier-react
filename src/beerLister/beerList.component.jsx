@@ -7,7 +7,7 @@ var BeerItem = require('./beerItem.component.jsx');
 
 // Function that list beers for you ;)
 var listBeers = function (callback) {
-  var url = 'http://api.openbeerdatabase.com/v1/beers.json';
+  var url = 'v1/beers.json';
 
   superagent
     .get(url)
