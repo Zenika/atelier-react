@@ -3,7 +3,6 @@
 var React = require('react/addons');
 var TestUtils = React.addons.TestUtils;
 
-// Don't forget to tell jest to not mock the tested component ;)
 jest.dontMock('../beerItem.component.jsx');
 var BeerItem = require('../beerItem.component.jsx');
 
