@@ -1,42 +1,27 @@
 'use strict';
 
 var React = require('react');
-var superagent = require('superagent');
-
+var Reflux = require('reflux');
 var BeerItem = require('./beerItem.component.jsx');
-
-// TODO this has to be done in the action
-var listBeers = function (callback) {
-  var url = 'v1/beers.json';
-
-  superagent
-    .get(url)
-    .end(function (err, response, data) {
-      if (err) {
-        console.log(err);
-      } else {
-        var data = JSON.parse(response.text).beers;
-        callback(data);
-      }
-    });
-};
+var BeersList = require('../actions/beersList.action');
+var BeersStore = require('../stores/beers.store');
 
 var BeerList = React.createClass({
+  mixins: [
+    Reflux.connect(BeersStore,'beers')
+  ],
 
   getInitialState: function () {
     return {beers: []};
   },
 
   componentWillMount: function () {
-    var self = this;
-
-    listBeers(function (data) {
-      self.setState({beers: data});
-    });
+    console.log('[COMPONENT] getBeers action !');
+    BeersList.getBeers();
   },
 
   render: function () {
-
+    console.log('[COMPONENT] rendering !');
     var list = this.state.beers.map(function (beer, n) {
       return <BeerItem key={n} beer={beer}/>;
     });
