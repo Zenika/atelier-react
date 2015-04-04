@@ -1,0 +1,14 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "global-strict": false,
+    "quotes": "single",
+    "no-console": false
+  },
+  "globals": {
+    "require": true,
+    "module": true,
+    "document": true,
+    "console": true
+  }
+}
