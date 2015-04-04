@@ -5,7 +5,7 @@ var superagent = require('superagent');
 
 var BeerItem = require('./beerItem.component.jsx');
 
-// Function that list beers for you ;)
+// TODO this has to be done in the action
 var listBeers = function (callback) {
   var url = 'v1/beers.json';
 
