@@ -1,11 +1,23 @@
 'use strict';
 
 var Reflux = require('reflux');
+var BeersList = require('../actions/beersList.action');
 
 var BeersStore = Reflux.createStore({
-  // TODO declare to be listening to actions
+  listenables: BeersList,
 
-  // TODO add behaviour to completed and failed action phase
+  onGetBeers: function () {
+    console.log('[SOTRE] action started');
+  },
+
+  onGetBeersCompleted: function (data) {
+    console.log('[STORE] trigger data :', data);
+    this.trigger(data);
+  },
+
+  onGetBeersFailed: function () {
+    console.log('[STORE] action failed ...');
+  }
 });
 
 module.exports = BeersStore;

@@ -1,10 +1,30 @@
 'use strict';
 
+var superagent = require('superagent');
+var Reflux = require('reflux');
+
 var Actions = Reflux.createActions({
-  // Action name has to be getBeers to match tests
-  // TODO declare completed and failed action phase
+  getBeers: {
+    children: ['completed', 'failed']
+  }
 });
 
-// TODO specify listener for the action and call superagent
+Actions.getBeers.listen(function () {
+  var url = 'v1/beers.json';
+  var self = this;
+
+  superagent
+    .get(url)
+    .end(function (err, response) {
+      if (err) {
+        console.log(err);
+        self.failed(err);
+      } else {
+        var data = JSON.parse(response.text).beers;
+        console.log('[ACTION] data received !');
+        self.completed(data);
+      }
+    });
+});
 
 module.exports = Actions;
