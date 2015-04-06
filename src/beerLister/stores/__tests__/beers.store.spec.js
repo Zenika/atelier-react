@@ -32,4 +32,26 @@ describe('Beers store', function () {
 
     expect(listener).not.toBeCalled();
   });
+
+  describe('given that data are allready fetched', function () {
+    var data = [{name: 'foo'}, {name: 'bar'}];
+    beforeEach(function () {
+      BeersStore.onGetBeersCompleted(data);
+
+      jest.runAllTimers();
+      listener.mockClear();
+    });
+
+    it('should trigger filtered data onFilterBeers with filter', function () {
+      BeersStore.onFilterBeers('foo');
+
+      expect(listener).toBeCalledWith([{name: 'foo'}]);
+    });
+
+    it('should trigger all data onFilterBeers without filter', function () {
+      BeersStore.onFilterBeers();
+
+      expect(listener).toBeCalledWith(data);
+    });
+  });
 });

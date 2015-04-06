@@ -6,7 +6,8 @@ var Reflux = require('reflux');
 var Actions = Reflux.createActions({
   getBeers: {
     children: ['completed', 'failed']
-  }
+  },
+  filterBeers: {}
 });
 
 Actions.getBeers.listen(function () {
@@ -14,7 +15,7 @@ Actions.getBeers.listen(function () {
   var self = this;
 
   superagent
-    .get(url)
+    .get(url, {per_page:'100'})
     .end(function (err, response) {
       if (err) {
         console.log(err);
