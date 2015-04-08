@@ -37,4 +37,5 @@ var BeerList = React.createClass({
     );
   }
 });
+
 module.exports = BeerList;
