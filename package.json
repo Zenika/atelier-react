@@ -24,9 +24,12 @@
     "express": "^4.12.3",
     "flux": "^2.0.1",
     "http-proxy": "^1.10.1",
+    "lodash": "^3.6.0",
     "node-jsx": "^0.12.4",
     "react": "^0.13.1",
+    "react-router": "^0.13.2",
     "reflux": "^0.2.7",
+    "sprintf-js": "^1.0.2",
     "superagent": "^1.1.0"
   },
   "devDependencies": {
