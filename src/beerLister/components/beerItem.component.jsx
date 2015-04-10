@@ -8,6 +8,7 @@ var BeerItem = React.createClass({
 
     return (
       <li className="list-group-item row">
+        // TODO Ajouter un lien vers le détail
         <h3 className="list-group-item-heading">{beer.name}</h3>
         <div className="list-group-item-text">
           <p className="badge col-md-1">{beer.abv}%</p>

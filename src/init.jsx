@@ -3,5 +3,5 @@
 var React = require('react');
 var List = require('./beerLister/components/beerList.component.jsx');
 
-// TODO Render the root element into the view
+// TODO Faire le rendu du RouteHandler
 React.render(<List />, document.getElementById('view'));
