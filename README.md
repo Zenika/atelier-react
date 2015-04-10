@@ -19,3 +19,25 @@ Lister les bières en vrac dans un composant
 
 ## TP2
 Mettre en place un composant pour la liste et un composant pour les éléments
+
+## TP3
+Mise en place de reflux
+- Création des actions
+- Création du store qui écoute les actions
+- Le composant list doit écouter le store
+- Le composant doit déclancher l'action lorsqu'il est monté
+
+## TP4
+Ajout d'un champs de recher pour filtrer les bières
+- Ajout d'un nouveau composant
+- Ajout d'une nouvelle action
+- Ajout de nouveaux listener dans le store
+- Ecriture des tests avec jest
+
+## TP5
+Utilisation de react-router
+- Ajout d'un composant detail pour afficher une bière seule
+- Ajout d'un store et d'une action pour le nouveau composant
+- Mise en place des routes
+- Ajout de liens dans les deux pages pour naviguer
+- Ecriture des tests avec jest
