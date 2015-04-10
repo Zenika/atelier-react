@@ -5,23 +5,10 @@ var browserSync = require('browser-sync');
 
 var $ = require('gulp-load-plugins')();
 
-gulp.task('webpack', function () {
-    gulp.src('src/init.jsx')
-        .pipe(webpack({
-            output: {
-                filename: "bundle.js"
-            },
-            module: {
-                loaders: [
-                    {test: /\.jsx$/, loader: 'jsx-loader'}
-                ]
-            }
-        }))
-        .pipe(gulp.dest('dist'));
-});
+function webpack(watch, es6, callback) {
+  var src = es6 ? 'src-es6/init.js' : 'src/init.jsx';
 
-function webpack(watch, callback) {
-  return gulp.src('src/init.jsx')
+  return gulp.src(src)
     .pipe($.webpack({
       watch: watch,
       module: {
@@ -29,9 +16,8 @@ function webpack(watch, callback) {
           { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: 'eslint-loader'}
         ],
         loaders: [
-          { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: 'babel-loader'}
-        ]//,
-        //noParse: [/lie\.js/, /leveldown/, /levelup/]
+          { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: 'babel-loader?optional=runtime'}
+        ]
       },
       output: {
         filename: 'bundle.js'
@@ -55,20 +41,38 @@ function webpack(watch, callback) {
     .pipe(gulp.dest('dist'));
 }
 
-gulp.task('webpack', function () {
-  return webpack(false);
-});
+function server(es6) {
+  var src = es6 ? './src-es6' : './src';
 
-gulp.task('webpack:watch', function (callback) {
-  return webpack(true, callback);
-});
-
-gulp.task('serve', ['webpack:watch'], function () {
   browserSync.init({
     startPath: '/',
     server: {
-      baseDir: ['./dist', './src', './node_modules'],
+      baseDir: ['./dist', src, './node_modules'],
       middleware: require('./obd-proxy')
     }
   });
+}
+
+gulp.task('webpack', function () {
+  return webpack(false, false);
+});
+
+gulp.task('webpack:watch', function (callback) {
+  return webpack(true, false, callback);
+});
+
+gulp.task('serve', ['webpack:watch'], function () {
+  server(false);
+});
+
+gulp.task('webpack:es6', function () {
+  return webpack(false, true);
+});
+
+gulp.task('webpack:es6:watch', function (callback) {
+  return webpack(true, true, callback);
+});
+
+gulp.task('serve:es6', ['webpack:es6:watch'], function () {
+  server(true);
 });
