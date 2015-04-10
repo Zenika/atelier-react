@@ -80,4 +80,9 @@ describe('BeersList action', function () {
 
   });
 
+
+  it('should have a filterBeers action', function () {
+    expect(BeersList.filterBeers).toBeDefined();
+    expect(typeof BeersList.filterBeers).toBe('function');
+  });
 });

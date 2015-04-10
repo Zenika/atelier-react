@@ -31,4 +31,24 @@ describe('Beers store', function () {
     expect(listener).not.toHaveBeenCalled();
   });
 
+  describe('given that data are allready fetched', function () {
+    var data = [{name: 'foo'}, {name: 'bar'}];
+    beforeEach(function () {
+      BeersStore.onGetBeersCompleted(data);
+
+      listener = jasmine.createSpy('listener');
+    });
+
+    it('should trigger filtered data onFilterBeers with filter', function () {
+      BeersStore.onFilterBeers('foo');
+
+      expect(listener).toHaveBeenCalledWith([{name: 'foo'}]);
+    });
+
+    it('should trigger all data onFilterBeers without filter', function () {
+      BeersStore.onFilterBeers();
+
+      expect(listener).toHaveBeenCalledWith(data);
+    });
+  });
 });
