@@ -7,6 +7,7 @@ var Actions = Reflux.createActions({
   getBeers: {
     children: ['completed', 'failed']
   }
+  // TODO add new action
 });
 
 Actions.getBeers.listen(function () {
