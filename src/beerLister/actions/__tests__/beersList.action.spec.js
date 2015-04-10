@@ -60,4 +60,9 @@ describe('BeersList action', function () {
     expect(onGetBeersCompleted).not.toBeCalled();
     expect(onGetBeersFailed).toBeCalled();
   });
+
+  it('should have a filterBeers action', function () {
+    expect(BeersList.filterBeers).toBeDefined();
+    expect(typeof BeersList.filterBeers).toBe('function');
+  });
 });
