@@ -1,7 +1,10 @@
 'use strict';
 
 var React = require('react');
-var List = require('./beerLister/components/beerList.component.jsx');
+var Router = require('react-router');
+var routes = require('./routes.jsx');
 
 // TODO Faire le rendu du RouteHandler
-React.render(<List />, document.getElementById('view'));
+Router.run(routes, function (Main) {
+  React.render(<Main />, document.getElementById('view'));
+});
