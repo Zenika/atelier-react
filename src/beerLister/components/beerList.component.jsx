@@ -5,6 +5,7 @@ var Reflux = require('reflux');
 var BeerItem = require('./beerItem.component.jsx');
 var BeersList = require('../actions/beersList.action');
 var BeersStore = require('../stores/beers.store');
+var BeerSearch = require('./beerSearch.component.jsx');
 
 var BeerList = React.createClass({
   mixins: [
@@ -27,10 +28,12 @@ var BeerList = React.createClass({
     });
 
     return (
-      <ul className="list-group">
-        // TODO Declare new component
+      <div>
+        <BeerSearch />
+        <ul className="list-group">
         {list}
-      </ul>
+        </ul>
+      </div>
     );
   }
 });
