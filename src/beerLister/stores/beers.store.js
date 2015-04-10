@@ -9,17 +9,17 @@ var BeersStore = Reflux.createStore({
   data: [],
 
   onGetBeers: function () {
-    console.log('[SOTRE] action started');
+    console.log('[SOTRE] getBeers action started');
   },
 
   onGetBeersCompleted: function (data) {
-    console.log('[STORE] trigger data :', data);
+    console.log('[STORE] getBeers trigger data :', data);
     this.data = data;
     this.trigger(data);
   },
 
   onGetBeersFailed: function () {
-    console.log('[STORE] action failed ...');
+    console.log('[STORE] getBeers action failed ...');
   },
 
   onFilterBeers: function (searchBeer) {
