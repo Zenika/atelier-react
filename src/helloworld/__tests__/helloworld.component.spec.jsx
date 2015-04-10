@@ -13,8 +13,8 @@ describe('helloworld.component', function () {
     instance = TestUtils.renderIntoDocument(<HelloWorld />);
   });
 
-  it('should be rendered', function () {
+  it('should render helloworld component', function () {
     expect(instance).toBeDefined();
-    expect(React.findDOMNode(instance) instanceof HTMLElement).toBe(true);
+    expect(TestUtils.findRenderedDOMComponentWithTag(instance, 'div')).toBeDefined();
   });
 });
