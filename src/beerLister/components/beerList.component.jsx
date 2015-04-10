@@ -28,6 +28,7 @@ var BeerList = React.createClass({
 
     return (
       <ul className="list-group">
+        // TODO Declare new component
         {list}
       </ul>
     );
