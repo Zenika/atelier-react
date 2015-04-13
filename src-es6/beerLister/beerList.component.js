@@ -1,4 +1,5 @@
 import React from 'react';
+import BeerItem from './beerItem.component';
 import BeerListStore from './beerList.store';
 import BeerListActions from './beerList.action';
 
@@ -9,9 +10,12 @@ export default class BeerList extends React.Component {
     this.state = { beers: [] };
   }
 
+  componentWillMount() {
+    BeerListActions.getBeers();
+  }
+
   componentDidMount() {
     this.unsubscribe = BeerListStore.listen(this.onBeersChange.bind(this));
-    BeerListActions.getBeers();
   }
 
   componentWillUnmount() {
@@ -23,21 +27,13 @@ export default class BeerList extends React.Component {
   }
 
   render() {
-    var list = this.state.beers.map(function (beer, n) {
-      return (
-        <li key={n} className="list-group-item row">
-          <h3 className="list-group-item-heading">{beer.name}</h3>
-          <div className="list-group-item-text">
-            <p className="badge col-md-1">{beer.abv}%</p>
-            <p className="col-md-11">{beer.description}</p>
-          </div>
-        </li>
-      );
+    var list = this.state.beers.map((beer, n) => {
+      return <BeerItem key={n} beer={beer}/>;
     });
 
     return (
       <ul className="list-group">
-      {list}
+        {list}
       </ul>
     );
   }
