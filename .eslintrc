@@ -1,5 +1,8 @@
 {
   "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ],
   "rules": {
     "global-strict": false,
     "strict": false,
@@ -10,6 +13,10 @@
     "require": true,
     "module": true,
     "document": true,
-    "console": true
+    "console": true,
+    "jest": true
+  },
+  "env": {
+    "jasmine": true
   }
 }

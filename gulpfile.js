@@ -1,5 +1,7 @@
 'use strict';
 
+require('harmonize')();
+
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 
@@ -53,6 +55,21 @@ function server(es6) {
   });
 }
 
+function jest(es6) {
+  var src = es6 ? 'src-es6' : 'src';
+
+  return gulp.src(src)
+    .pipe($.jest({
+      scriptPreprocessor: "../node_modules/babel-jest",
+      unmockedModulePathPatterns: [
+        '../node_modules/'
+      ],
+      moduleFileExtensions: [
+        'js', 'json', 'jsx'
+      ]
+    }));
+}
+
 gulp.task('webpack', function () {
   return webpack(false, false);
 });
@@ -65,6 +82,10 @@ gulp.task('serve', ['webpack:watch'], function () {
   server(false);
 });
 
+gulp.task('test', function () {
+  return jest(false);
+});
+
 gulp.task('webpack:es6', function () {
   return webpack(false, true);
 });
@@ -75,4 +96,8 @@ gulp.task('webpack:es6:watch', function (callback) {
 
 gulp.task('serve:es6', ['webpack:es6:watch'], function () {
   server(true);
+});
+
+gulp.task('test:es6', function () {
+  return jest(true);
 });
