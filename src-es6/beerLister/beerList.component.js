@@ -1,5 +1,6 @@
 import React from 'react';
 import BeerItem from './beerItem.component';
+import BeerSearch from './beerSearch.component';
 import BeerListStore from './beerList.store';
 import BeerListActions from './beerList.action';
 
@@ -33,6 +34,7 @@ export default class BeerList extends React.Component {
 
     return (
       <ul className="list-group">
+        <BeerSearch />
         {list}
       </ul>
     );

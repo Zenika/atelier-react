@@ -1,11 +1,10 @@
 import React from 'react';
-import BeerListAction from './beersList.action';
+import BeerListAction from './beerList.action';
 
 export default class BeerSearch extends React.Component {
   search(event) {
     event.preventDefault();
     var searchInput = React.findDOMNode(this.refs.searchInput).value;
-    console.log('value:', searchInput);
     BeerListAction.filterBeers(searchInput);
   }
 
@@ -15,7 +14,7 @@ export default class BeerSearch extends React.Component {
 
   render() {
     return (
-      <form className="inline" onChange={this.search}>
+      <form className="inline" onChange={this.search.bind(this)}>
         <p className="input-group col-md-3">
           <input className="form-control input"
             type="search"

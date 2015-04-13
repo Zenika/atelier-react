@@ -4,7 +4,8 @@ import { getBeers } from '../utils/openBeerRequest';
 const Actions = Reflux.createActions({
   getBeers: {
     children: ['completed', 'failed']
-  }
+  },
+  filterBeers: {}
 });
 
 Actions.getBeers.listen(function() {
