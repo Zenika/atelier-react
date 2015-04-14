@@ -27,6 +27,42 @@ module.exports = DivComponent;
 
 
 
+
 ## Des outils
-* CommonJS ![Webpack](img/webpack.png)
-* Jest ![jest](img/jest.png)
+* Gulp
+* ESLint
+* Webpack
+* Jest
+
+<img src="img/gulp.png" style="background-color: white; height: 200px;">
+<img src="img/eslint.png" style="background-color: white; height: 200px;">
+<img src="img/webpack.png" style="background-color: white; height: 200px;">
+<img src="img/jest.png" style="background-color: white; height: 200px;">
+
+
+
+
+## ES6
+
+<img src="img/babel.png" style="background-color: white; height: 200px;">
+
+* Rétrocompatible ES5
+* Compile du code ES6+ en ES5
+* Support à 100% de JSX et React 0.13
+* Plugins pour ESLint, Webpack et Jest !
+
+
+
+
+## example ES6
+```jsx
+// div.component.jsx
+
+import React from 'react';
+
+export default class DivComponent extends React.Component {
+  render() {
+    return <div />;
+  }
+}
+```
