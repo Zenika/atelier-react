@@ -60,6 +60,15 @@ gulp.task('serve', ['webpack:watch'], function () {
   });
 });
 
+gulp.task('slides', function () {
+  browserSync.init({
+    startPath: '/',
+    server: {
+      baseDir: ['./slides']
+    }
+  });
+});
+
 gulp.task('test', function () {
   return gulp.src('src')
     .pipe(jest({
