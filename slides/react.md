@@ -27,6 +27,19 @@ module.exports = DivComponent;
 
 
 
+## Le pattern flux
+<img src="img/flux-simple.png" style="background-color: white; height: 300px;">
+
+
+
+Plusieurs implémentation de Flux
+
+* Fluxxor
+* Fluxible
+* Reflux
+* ...
+
+
 
 ## Des outils
 * Gulp
