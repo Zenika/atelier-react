@@ -1,0 +1,12 @@
+var Div = React.createClass({
+
+  render: function () {
+    return (
+      &#60;div&#62;
+        // ...
+      &#60;div/&#62;
+    );
+  }
+});
+
+module.exports = Div;
