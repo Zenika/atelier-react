@@ -1,4 +1,4 @@
-## TP2
+## TP 2
 Découper en composants
 
 

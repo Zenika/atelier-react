@@ -4,4 +4,4 @@
 * Vision composant 
 * Vous avez dit Flux ? 
 * Tester c'est douter 
-* Une appli isomorphique ? 
+* React router
