@@ -3,7 +3,7 @@ Ecrire vos propes tests
 
 
 
-* Le but est d'ajouter un fonction de filtre sur les bières
+* Le but est d'ajouter une fonction de filtre sur les bières
 * Puis d'écrire vos tests pour la nouvelle fonctionnalité
 
 

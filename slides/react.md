@@ -1,7 +1,7 @@
 ## Qu'est-ce que c'est ?
-* Une library orientée composant <!-- .element: class="fragment" -->
+* Une librairie orientée composant <!-- .element: class="fragment" -->
 * Le Virtual DOM <!-- .element: class="fragment" -->
-* Un flux de données unidirectionnel <!-- .element: class="fragment" -->
+* Prorgrammation réactive <!-- .element: class="fragment" -->
 
 
 
@@ -18,7 +18,7 @@ var React = require('react');
 
 var DivComponent = React.createClass({
  render: function () {
-   return <div />;
+   return <div>Hello World</div>;
  };
 });
 
@@ -60,7 +60,7 @@ Plusieurs implémentation de Flux
 * Rétrocompatible ES5
 * Compile du code ES6+ en ES5
 * Support à 100% de JSX et React 0.13
-* Plugins pour ESLint, Webpack et Jest !
+* Plugins pour ESLint, Webpack et plein d'autres !
 
 
 
@@ -73,7 +73,7 @@ import React from 'react';
 
 export default class DivComponent extends React.Component {
   render() {
-    return <div />;
+    return <div>Hello World</div>;
   }
 }
 ```
