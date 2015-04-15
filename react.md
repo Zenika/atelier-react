@@ -45,18 +45,16 @@ Plusieurs implémentation de Flux
 * Gulp
 * ESLint
 * Webpack
-* Jest
+* Karma
 
 <img src="img/gulp.png" style="background-color: white; height: 200px;">
 <img src="img/eslint.png" style="background-color: white; height: 200px;">
 <img src="img/webpack.png" style="background-color: white; height: 200px;">
-<img src="img/jest.png" style="background-color: white; height: 200px;">
-
+<img src="img/karma.png" style="background-color: white; height: 200px;">
 
 
 
 ## ES6
-
 <img src="img/babel.png" style="background-color: white; height: 200px;">
 
 * Rétrocompatible ES5
