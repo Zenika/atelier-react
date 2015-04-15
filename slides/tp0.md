@@ -41,7 +41,7 @@ var Hello = require('./helloworld/helloworld.component.jsx');
 Pour lancer les tests, il suffit d'exécuter la commande
 
 ```sh
-npm test
+gulp test
 ```
 
 
