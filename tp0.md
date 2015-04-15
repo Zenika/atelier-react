@@ -18,7 +18,7 @@ var React = require('react');
 
 var Helloworld = React.createClass({
 
-  // TODO define compoenent render function
+  // TODO define component render function
 });
 
 module.exports = Helloworld;
@@ -48,3 +48,4 @@ gulp test
 
 ## A vos clavier
 ![clavier](img/keyboard.gif)
+<p><a href="http://zenika.github.io/atelier-react">http://zenika.github.io/atelier-react</a></p>

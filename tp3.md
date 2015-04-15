@@ -23,7 +23,7 @@ Flux, le pattern unidirectionnel
 
 * Dans Reflux, il suffit de déclarer le nom de l'action
 * Son appel va automatiquement notifier les stores qui l'écoutent
-* Si l'action est appelée avec un parametre, celui ci est transmit au store
+* Si l'action est appelée avec un paramètre, celui ci est transmis au store
 
 
 
@@ -44,7 +44,7 @@ Actions.foo();
 
 
 
-* Le écoute écoute une ou plusieurs actions
+* Le store écoute une ou plusieurs actions
 * Il peut aussi écouter d'autres stores
 * C'est lui qui va transmettre les données au composant
 
