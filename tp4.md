@@ -1,5 +1,5 @@
 ## TP 4
-Ecrire vos propes tests
+Ecrire vos propres tests
 
 
 
