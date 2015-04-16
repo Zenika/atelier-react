@@ -42,3 +42,9 @@ var BeerList = React.createClass({
   // TODO render
 });
 ```
+
+
+
+Encore la doc component
+
+[https://facebook.github.io/react/docs/component-api.html](https://facebook.github.io/react/docs/component-api.html)

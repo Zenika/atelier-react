@@ -75,3 +75,15 @@ Router.run(routes, function (Main) {
   React.render(<Main />, document.getElementById('view'));
 });
 ```
+
+
+
+Testez ce que vous pouvez
+
+![defuse](./img/defuse.jpg)
+
+
+
+Normalement vous avez tout, mais la doc est là
+
+[https://github.com/rackt/react-router/tree/master/docs/api](https://github.com/rackt/react-router/tree/master/docs/api)

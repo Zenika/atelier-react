@@ -6,6 +6,8 @@ Construire un Hello world en React
 * Le but est de créer votre premier composant React
 * Il doit juste afficher Hello world <!-- .element: class="fragment" -->
 * Les tests sont déjà prêts <!-- .element: class="fragment" -->
+* Le server node aussi <!-- .element: class="fragment" -->
+* Même l'index.html ! <!-- .element: class="fragment" -->
 
 
 
@@ -38,6 +40,22 @@ var Hello = require('./helloworld/helloworld.component.jsx');
 
 
 
+Le but étant de remplir la balise `view`
+
+```html
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Atelier React</h1>
+        </div>
+        <div id="view"></div>
+    </div>
+    <script src="bundle.js" />
+</body>
+```
+
+
+
 Pour lancer les tests, il suffit d'exécuter la commande
 
 ```sh
@@ -48,4 +66,6 @@ gulp test
 
 ## A vos clavier
 ![clavier](img/keyboard.gif)
-<p><a href="http://zenika.github.io/atelier-react">http://zenika.github.io/atelier-react</a></p>
+
+[http://zenika.github.io/atelier-react](http://zenika.github.io/atelier-react)
+[https://facebook.github.io/react/docs/component-api.html](https://facebook.github.io/react/docs/component-api.html)

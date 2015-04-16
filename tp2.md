@@ -41,3 +41,8 @@ Via les propriétés du composant <!-- .element: class="fragment" -->
     );
   }
 ```
+
+
+
+* Ne pas oublier d'exporter le composant enfant
+* Et de le "require" dans le composant parent <!-- .element: class="fragment" -->

@@ -91,3 +91,9 @@ var Component = React.createClass({
   render: function() { ... }
 });
 ```
+
+
+
+Un peu de doc ...
+
+[https://github.com/spoike/refluxjs](https://github.com/spoike/refluxjs)
