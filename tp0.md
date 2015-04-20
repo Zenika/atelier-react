@@ -11,6 +11,12 @@ Construire un Hello world en React
 
 
 
+## Les sources
+http://zenika.github.io/atelier-react/atelier-react.tar.gz
+
+
+
+
 Le rendu va se faire dans le fichier _helloworld.jsx_
 
 ```jsx
