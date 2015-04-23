@@ -75,3 +75,16 @@ gulp test
 
 [http://zenika.github.io/atelier-react](http://zenika.github.io/atelier-react)
 [https://facebook.github.io/react/docs/component-api.html](https://facebook.github.io/react/docs/component-api.html)
+
+
+
+### Un peu d'aide
+
+Pour dire à React de faire le rendu dans view
+
+```jsx
+React.render(
+  <MonComposant />,
+  document.getElementById('view')
+);
+```
